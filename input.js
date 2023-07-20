@@ -1,9 +1,9 @@
 class Input {
-    static const keymaps = [];
+    static keymaps = [];
     static instance;
     
     constructor() {
-        input.instance = this;
+        Input.instance = this;
     }
     
     static addKeyMap(name, pc_key=null, joypad_button=null, touch_element_class=null) {
