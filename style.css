@@ -35,6 +35,9 @@ body.no-scroll {
     overflow: hidden;
     height: 100%;
 }
+div {
+    content: "";
+}
 
 
 
@@ -99,7 +102,7 @@ body.no-scroll {
     src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/LINESEEDJP_OTF_0.OTF');
     font-weight: 900;
 }
-
+/*  */
 @font-face {
     font-family: 'PlemolJP35 HS';
     src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-THIN_0.TTF');
@@ -188,3 +191,4 @@ body.no-scroll {
     font-style: italic;
     font-weight: 700;
 }
+/*  */

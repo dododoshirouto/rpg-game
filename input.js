@@ -40,11 +40,11 @@ class Input {
         Input.keymaps.push(keymap);
     }
     
-    static setInputEvent() {
+    static setInputEvents() {
         Input.keymaps.forEach(keymap=> {
             document.querySelectorAll(keymap.touch_element_query)
                 .forEach(elm=> {
-                    elm.addEventListener('click', ev=> {
+                    elm.addEventListener('touchstart', ev=> {
                         Input.dispatchEvent(keymap.name, ev);
                     });
                 });
@@ -75,4 +75,4 @@ class Input {
     }
 }
 
-input = new Input();
+setTimeout(_=> input = new Input(),1);
