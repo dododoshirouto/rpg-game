@@ -1,0 +1,190 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-image: none;
+    
+    /* 文字選択を禁止する */
+    user-select: none; /* CSS3 */
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Safari、Chromeなど */
+}
+
+:root {
+    --sans-font: 'LINE Seed JP_OTF', -apple-system, BlinkMacSystemFont, 'Avenir Next', Avenir, 'Nimbus Sans L', Roboto, 'Noto Sans', 'Segoe UI', Arial, Helvetica, 'Helvetica Neue', sans-serif;
+    --mono-font: 'PlemolJP35 HS', Consolas, Menlo, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    
+    --controler-height: 45%;
+    
+    --background-color: #222435;
+    --text-color: white;
+    --border-color: #595B6F;
+    --border-radius: 5px;
+}
+
+html {
+    /* ダブルタップを禁止する */
+    touch-action: manipulation;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--sans-font)
+}
+body.no-scroll {
+    position: fixed;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+
+
+#main {
+    width: 100%;
+    height: calc(100% - var(--controler-height))
+}
+
+#controler {
+    display: grid;
+    position: absolute;
+    width: 100%;
+    height: var(--controler-height);
+    bottom: 0px;
+    
+    grid-gap: 3px;
+    grid-template-columns: 15%, 70%, 15%;
+    grid-template-rows: 50%, 50%;
+    grid-template-areas:
+        "left up   right"
+        "left down right";
+}
+#controler [class*="input-"] {
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+#controler .input-up {
+    grid-area: up;
+}
+#controler .input-down {
+    grid-area: down;
+}
+#controler .input-left {
+    grid-area: left;
+}
+#controler .input-right {
+    grid-area: right;
+}
+
+
+
+
+
+@font-face {
+    font-family: 'LINE Seed JP_OTF';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/LINESEEDJP_OTF_TH.OTF');
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'LINE Seed JP_OTF';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/LINESEEDJP_OTF_RG.OTF');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'LINE Seed JP_OTF';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/LINESEEDJP_OTF.OTF');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'LINE Seed JP_OTF';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/LINESEEDJP_OTF_0.OTF');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-THIN_0.TTF');
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-THINITALIC_0.TTF');
+    font-style: italic;
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-EXTRALIGHT_0.TTF');
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-EXTRALIGHTITALIC_0.TTF');
+    font-style: italic;
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-LIGHT_0.TTF');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-LIGHTITALIC_0.TTF');
+    font-style: italic;
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-REGULAR_0.TTF');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-ITALIC_0.TTF');
+    font-style: italic;
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-TEXT_0.TTF');
+    font-weight: 450;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-TEXTITALIC_0.TTF');
+    font-style: italic;
+    font-weight: 450;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-MEDIUM_0.TTF');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-MEDIUMITALIC_0.TTF');
+    font-style: italic;
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-SEMIBOLD_0.TTF');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-SEMIBOLDITALIC_0.TTF');
+    font-style: italic;
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-BOLD_0.TTF');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'PlemolJP35 HS';
+    src: url('https://dododoshirouto.github.io/dodo-simple.css/Fonts/PLEMOLJP35HS-BOLDITALIC_0.TTF');
+    font-style: italic;
+    font-weight: 700;
+}
