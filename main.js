@@ -1,3 +1,5 @@
+document.addEventListener("dblclick", function(e){ e.preventDefault();}, { passive: false });
+
 setTimeout((_) => {
     new Input();
     Input.addEventListener('up', (ev, key) => console.log('up', ev, key));
