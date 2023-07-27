@@ -89,6 +89,10 @@ class Vector2 {
     toString() {
         return "(" + this.x + ", " + this.y + ")";
     }
+    
+    debug(title = 'Vector2', elem = null) {
+        Debug.display(title, this, elem);
+    }
 }
 
 class Time {
