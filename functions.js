@@ -39,17 +39,18 @@ class Time {
     
     static main() {
         Time.animFrameId = requestAnimationFrame(Time.main);
-        if (Time.startTime == 0) { Time.startTime = Date.now(); }
-        Time.time = Date.now() - Time.startTime;
-        if (Time.lastTime == 0) { Time.lastTime = Date.now(); return; }
+        let now_s = Date.now() / 1000;
+        if (Time.startTime == 0) { Time.startTime = now_s; }
+        Time.time = (now_s - Time.startTime).toFixed(6)-0;
+        if (Time.lastTime == 0) { Time.lastTime = now_s; return; }
         
-        Time.deltaTime = Time.time - Time.lastTime;
+        Time.deltaTime = (Time.time - Time.lastTime).toFixed(6)-0;
         
-        Time.scaledTime = Time.scaleStartScaled + (Time.scaleStart - Time.time) * Time.scale;
+        Time.scaledTime = Time.scaleStartScaled + (Time.time - Time.scaleStart) * Time.scale;
         
-        Time.lastTime = Date.now();
+        Time.lastTime = Time.time;
         
-        Time.debug();
+        // Time.debug();
     }
     
     static setScale(scale) {
@@ -62,9 +63,11 @@ class Time {
      * @param {HTMLElement} elem
      */
     static debug (elem = null) {
-        Debug.display('Time', Time);
+        Debug.display('Time', Time, elem);
     }
 }
+
+Time.start();
 
 class Debug {
     /** @type {HTMLElement} */
@@ -80,7 +83,7 @@ class Debug {
     static createDisplayText(title, vars, outputConsole = Debug.outputConsole) {
         let output = title + "\n";
         let keys = Object.keys(vars);
-        let maxKeyLen = keys.reduce((a,b) => Math.max(a.length||0,b.length||0));
+        let maxKeyLen = keys.reduce((a,b) => Math.max(a.length??0,b.length??0));
         let spaceFills = Array.from({length: maxKeyLen-1}, _=>' ').join('');
         keys.forEach(key=> {
             output += `${(key+spaceFills).slice(0, maxKeyLen)} : ${JSON.stringify(vars[key])}\n`;
