@@ -4,11 +4,17 @@ class Vector2 {
     /** @type {number} */
     y;
     
+    /** @return {Vector2} */
     static up() { return new Vector2(0, 1); }
+    /** @return {Vector2} */
     static down() { return new Vector2(0, -1); }
+    /** @return {Vector2} */
     static left() { return new Vector2(-1, 0); }
+    /** @return {Vector2} */
     static right() { return new Vector2(1, 0); }
+    /** @return {Vector2} */
     static zero() { return new Vector2(0, 0); }
+    /** @return {Vector2} */
     static one() { return new Vector2(1, 1); }
     
     constructor(x, y) {
