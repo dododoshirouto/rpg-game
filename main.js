@@ -10,9 +10,9 @@ function init() {
 
     GameObject.parentElem = document.querySelector('#scene');
     
-    player = new GameObject({
+    player = new Player({
         name: 'player',
-        type: GameObjectType.Player,
+        // type: GameObjectType.Player,
         images: ['https://cdn-icons-png.flaticon.com/512/149/149769.png'],
     })
 }
